@@ -1,14 +1,14 @@
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import styles from "../styles/Square.module.css";
 
 type Props = {
   value: ReactNode;
+  onClick?(): void;
 };
 export default function Square(props: Props) {
-  const [value, setValue] = useState(null);
   return (
-    <button className={styles.square} onClick={() => setValue("X")}>
-      {value}
+    <button className={styles.square} onClick={() => props.onClick()}>
+      {props.value}
     </button>
   );
 }
