@@ -7,7 +7,7 @@ export default function Board() {
   const [xIsNext, setXIsnext] = useState(true);
 
   function handleClick(i: number) {
-    const newSquares = squares.slice();
+    const newSquares = [...squares];
     newSquares[i] = xIsNext ? "X" : "O";
     setSquares(newSquares);
     setXIsnext(!xIsNext);
